@@ -142,3 +142,13 @@ const deleteTask = await prisma.task.delete({
   },
 });
 ```
+
+# Group (while using hover)
+
+The group class is added to a parent element to enable hover or focus effects on its child elements.
+Use group-hover or group-focus in the child element to apply styles when the parent is hovered or focused.
+Example:
+
+<div className="group hover:bg-gray-200">
+  <p className="group-hover:text-gray-800">Hover me!</p>
+</div>
