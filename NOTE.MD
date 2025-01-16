@@ -152,3 +152,7 @@ Example:
 <div className="group hover:bg-gray-200">
   <p className="group-hover:text-gray-800">Hover me!</p>
 </div>
+
+# Loader
+
+just create a file loading.tsx inside app folder
