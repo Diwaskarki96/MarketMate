@@ -156,3 +156,5 @@ Example:
 # Loader
 
 just create a file loading.tsx inside app folder
+
+test github push
