@@ -8,7 +8,7 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next Storefront",
+  title: "Market Mate",
   description:
     "A modern and user-friendly storefront built with Next.js, offering a seamless shopping experience.",
   keywords: [
