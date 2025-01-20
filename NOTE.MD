@@ -185,3 +185,7 @@ createdAt: "desc",
         </Suspense>
 
 it is used to show loading sate when navbar is fetching data and is very important.
+
+# Change package.json to deploy (for prisma)
+
+"build": "npx prisma generate && next build",
