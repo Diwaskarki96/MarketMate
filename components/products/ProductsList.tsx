@@ -4,6 +4,7 @@ import React from "react";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import FavoriteToggleButton from "./FavoriteToggleButton";
+import { Product } from "@prisma/client";
 
 const ProductsList = ({ products }: { products: Product[] }) => {
   return (
