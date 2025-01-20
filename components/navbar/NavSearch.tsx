@@ -1,17 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useDebounceCallBack } from "use-debounce";
+import { useDebouncedCallback } from "use-debounce";
 const NavSearch = () => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const [search, setSearch] = useState(
     searchParams.get("search")?.toString() || ""
   );
-  // const handleSearch = useDebounceCallBack((value:string)=>{
+  const handleSearch = useDebouncedCallback((value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (value) {
+      params.set("search", value);
+    } else {
+      params.delete("search");
+    }
+    replace(`/products?${params.toString()}`);
+  }, 500);
 
-  // },300);
+  useEffect(() => {
+    if (!searchParams.get("search")) {
+      setSearch("");
+    }
+  }, [searchParams.get("search")]);
   return (
     <Input
       type="search"
