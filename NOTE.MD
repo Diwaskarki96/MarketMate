@@ -177,3 +177,11 @@ createdAt: "desc",
 2. OR becomes useful when you want to check for multiple conditions, for example, searching by both name and description.
 3. if only one condition like name, OR is not required.
 4. mode: "insensitive": This makes the search case-insensitive. So, if search is "apple", it would match names like "Apple", "APPLE", "aPpLe", etc., regardless of letter case.
+
+# Use suspense like this (always wrap NavSearch)
+
+        <Suspense>
+          <NavSearch />
+        </Suspense>
+
+it is used to show loading sate when navbar is fetching data and is very important.
