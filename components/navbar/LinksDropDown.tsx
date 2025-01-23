@@ -42,7 +42,7 @@ const LinksDropDown = async () => {
         </SignedOut>
         <SignedIn>
           {links.map((link) => {
-            if (link.label === "dashboard" && !isAdmin) return null;
+            //if (link.label === "dashboard" && !isAdmin) return null;
             return (
               <DropdownMenuItem key={link.href}>
                 <Link className="capitalize w-full" href={link.href}>
