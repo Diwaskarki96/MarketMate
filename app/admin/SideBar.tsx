@@ -13,7 +13,8 @@ const SideBar = () => {
         const variant = isActivePAge ? "default" : "ghost";
         return (
           <Button
-            className="w-full mb-2 capitalize font-normal"
+            asChild
+            className="w-full mb-2 capitalize font-normal justify-start"
             variant={variant}
             key={link.href}
           >
