@@ -1,21 +1,9 @@
-import { LuUser } from "react-icons/lu";
-import { currentUser, auth } from "@clerk/nextjs/server";
-import Image from "next/image";
-const UserIcon = async () => {
-  const user = await currentUser();
-  const profileImage = user?.imageUrl;
-  console.log(profileImage);
-  if (profileImage) {
-    return (
-      <Image
-        src={profileImage}
-        alt="Profile"
-        className="w-6 h-6 rounded-full object-cover"
-        priority
-      />
-    );
-  }
-  return <LuUser className="w-6 h-6 bg-primary rounded-full text-white" />;
-};
+import { currentUser } from "@clerk/nextjs/server";
 
-export default UserIcon;
+export default async function Page() {
+  const user = await currentUser();
+
+  if (!user) return <div>Not signed in</div>;
+  console.log(user);
+  return <div>Hello {user?.firstName}</div>;
+}
