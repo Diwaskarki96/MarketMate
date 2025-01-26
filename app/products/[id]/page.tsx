@@ -44,5 +44,4 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
     </div>
   );
 };
-
 export default SingleProductPage;
