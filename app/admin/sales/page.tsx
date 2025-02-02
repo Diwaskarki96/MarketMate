@@ -7,8 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { fetchAdminOrders } from "@/utils/action";
 
-import { fetchAdminOrders } from "@/utils/actions";
 import { formatCurrency, formatDate } from "@/utils/format";
 async function SalesPage() {
   const orders = await fetchAdminOrders();
