@@ -275,8 +275,7 @@ export const fetchUserFavorites = async () => {
 };
 
 export const fetchCartItems = async () => {
-  const { userId } = auth();
-
+  const { userId } = await auth();
   const cart = await db.cart.findFirst({
     where: {
       clerkId: userId ?? "",
@@ -482,7 +481,10 @@ export const updateCartItemAction = async ({
   }
 };
 
-export const createOrderAction = async (prevState: any, formData: FormData) => {
+export const createOrderAction = async (
+  prevState: { [key: string]: any },
+  formData: FormData
+) => {
   const user = await getAuthUser();
   try {
     const cart = await fetchOrCreateCart({
